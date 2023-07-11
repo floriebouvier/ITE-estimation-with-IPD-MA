@@ -4,9 +4,9 @@ library(magrittr) # cstat computation
 library(lme4) # glmer
 library(doParallel) # parallel computing
 library(gtools) # calibration computation
-library(VGAM) # rrvglm
+library(VGAM) # rrvglm for rank-1
 
-setwd("C:/Users/Florie BRION-BOUVIER/Documents/These/ITE with IPD-MA/Fichiers R/Revised code")
+setwd("...")
 
 mse = function(y_true,y_pred){mean((y_true - y_pred)^2)}
 
