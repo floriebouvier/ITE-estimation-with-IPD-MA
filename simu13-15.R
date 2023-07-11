@@ -9,7 +9,7 @@ source("coxvc.R") # rank-1 with TTE outcome
 library(splines) # used in rank-1
 library(MASS) # ginv in rank-1
 
-setwd("C:/Users/Florie BRION-BOUVIER/Documents/These/ITE with IPD-MA/Fichiers R/Revised code")
+setwd("...")
 
 mse = function(y_true,y_pred){mean((y_true - y_pred)^2)}
 
