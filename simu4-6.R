@@ -8,7 +8,7 @@ library(VGAM) # rrvglm
 library(mvmeta) # meta-analysis
 library(msm) # delta method
 
-setwd("C:/Users/Florie BRION-BOUVIER/Documents/These/ITE with IPD-MA/Fichiers R/Revised code")
+setwd("...")
 
 mse = function(y_true,y_pred){mean((y_true - y_pred)^2)}
 
