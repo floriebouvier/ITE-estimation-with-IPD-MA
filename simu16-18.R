@@ -8,7 +8,7 @@ library(coxme) # cox regression with mixed effects
 library(mvmeta) # meta-analysis
 library(msm) # delta method
 
-setwd("...")
+setwd("C:/Users/Florie BRION-BOUVIER/Documents/These/ITE with IPD-MA/Fichiers R/Revised code")
 
 mse = function(y_true,y_pred){mean((y_true - y_pred)^2)}
 
@@ -60,7 +60,7 @@ cstat4ben = function(outcome, treatment, score, conf_lvl = 0.95, nbr_rep = 100){
 #### s-learner ####
 
 #### naive model ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.na.sl16 = foreach(j = 1:m,
@@ -468,7 +468,7 @@ res.re.sl.sim16 <- t(res.re.sl16[1:25, ])
 se.re.sl.sim16 <- t(res.re.sl16[26:44, ])
 
 #### stratified intercept ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.si.sl16 = foreach(j = 1:m,
@@ -673,7 +673,7 @@ res.si.sl.sim16 <- t(res.si.sl16[1:25, ])
 se.si.sl.sim16 <- t(res.si.sl16[26:44, ])
 
 #### rank-1 ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.r1.sl16 = foreach(j = 1:m,
@@ -897,7 +897,7 @@ res.r1.sl.sim16 <- t(res.r1.sl16[1:26, ])
 se.r1.sl.sim16 <- t(res.r1.sl16[27:46, ])
 
 #### fully stratified ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.fs.sl16 = foreach(j = 1:m,
@@ -1143,7 +1143,7 @@ se.fs.sl.sim16 <- t(res.fs.sl16[26:44, ])
 #### t-learner ####
 
 #### naive model ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.na.tl16 = foreach(j = 1:m,
@@ -1357,7 +1357,7 @@ res.na.tl.sim16 <- t(res.na.tl16[1:13, ])
 se.na.tl.sim16 <- t(res.na.tl16[14:20, ])
 
 #### random effects model ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.re.tl16 = foreach(j = 1:m,
@@ -1573,7 +1573,7 @@ res.re.tl.sim16 <- t(res.re.tl16[1:25, ])
 se.re.tl.sim16 <- t(res.re.tl16[26:44, ])
 
 #### stratified intercept ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.si.tl16 = foreach(j = 1:m,
@@ -1788,7 +1788,7 @@ res.si.tl.sim16 <- t(res.si.tl16[1:25, ])
 se.si.tl.sim16 <- t(res.si.tl16[26:44, ])
 
 #### rank-1 ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.r1.tl16 = foreach(j = 1:m,
@@ -2038,7 +2038,7 @@ res.r1.tl.sim16 <- t(res.r1.tl16[1:26, ])
 se.r1.tl.sim16 <- t(res.r1.tl16[27:46, ])
 
 #### fully stratified ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.fs.tl16 = foreach(j = 1:m,
@@ -2327,7 +2327,7 @@ save(res.na.sl.sim16,se.na.sl.sim16,
 #### s-learner ####
 
 #### naive model ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.na.sl17 = foreach(j = 1:m,
@@ -2531,7 +2531,7 @@ res.na.sl.sim17 <- t(res.na.sl17[1:25, ])
 se.na.sl.sim17 <- t(res.na.sl17[26:44, ])
 
 #### random effects model ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.re.sl17 = foreach(j = 1:m,
@@ -2735,7 +2735,7 @@ res.re.sl.sim17 <- t(res.re.sl17[1:25, ])
 se.re.sl.sim17 <- t(res.re.sl17[26:44, ])
 
 #### stratified intercept ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.si.sl17 = foreach(j = 1:m,
@@ -2940,7 +2940,7 @@ res.si.sl.sim17 <- t(res.si.sl17[1:25, ])
 se.si.sl.sim17 <- t(res.si.sl17[26:44, ])
 
 #### rank-1 ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.r1.sl17 = foreach(j = 1:m,
@@ -3164,7 +3164,7 @@ res.r1.sl.sim17 <- t(res.r1.sl17[1:26, ])
 se.r1.sl.sim17 <- t(res.r1.sl17[27:46, ])
 
 #### fully stratified ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.fs.sl17 = foreach(j = 1:m,
@@ -3410,7 +3410,7 @@ se.fs.sl.sim17 <- t(res.fs.sl17[26:44, ])
 #### t-learner ####
 
 #### naive model ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.na.tl17 = foreach(j = 1:m,
@@ -3624,7 +3624,7 @@ res.na.tl.sim17 <- t(res.na.tl17[1:13, ])
 se.na.tl.sim17 <- t(res.na.tl17[14:20, ])
 
 #### random effects model ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.re.tl17 = foreach(j = 1:m,
@@ -3840,7 +3840,7 @@ res.re.tl.sim17 <- t(res.re.tl17[1:25, ])
 se.re.tl.sim17 <- t(res.re.tl17[26:44, ])
 
 #### stratified intercept ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.si.tl17 = foreach(j = 1:m,
@@ -4055,7 +4055,7 @@ res.si.tl.sim17 <- t(res.si.tl17[1:25, ])
 se.si.tl.sim17 <- t(res.si.tl17[26:44, ])
 
 #### rank-1 ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.r1.tl17 = foreach(j = 1:m,
@@ -4305,7 +4305,7 @@ res.r1.tl.sim17 <- t(res.r1.tl17[1:26, ])
 se.r1.tl.sim17 <- t(res.r1.tl17[27:46, ])
 
 #### fully stratified ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.fs.tl17 = foreach(j = 1:m,
@@ -4595,7 +4595,7 @@ save(res.na.sl.sim17,se.na.sl.sim17,
 #### s-learner ####
 
 #### naive model ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.na.sl18 = foreach(j = 1:m,
@@ -4799,7 +4799,7 @@ res.na.sl.sim18 <- t(res.na.sl18[1:25, ])
 se.na.sl.sim18 <- t(res.na.sl18[26:44, ])
 
 #### random effects model ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.re.sl18 = foreach(j = 1:m,
@@ -5003,7 +5003,7 @@ res.re.sl.sim18 <- t(res.re.sl18[1:25, ])
 se.re.sl.sim18 <- t(res.re.sl18[26:44, ])
 
 #### stratified intercept ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.si.sl18 = foreach(j = 1:m,
@@ -5208,7 +5208,7 @@ res.si.sl.sim18 <- t(res.si.sl18[1:25, ])
 se.si.sl.sim18 <- t(res.si.sl18[26:44, ])
 
 #### rank-1 ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.r1.sl18 = foreach(j = 1:m,
@@ -5432,7 +5432,7 @@ res.r1.sl.sim18 <- t(res.r1.sl18[1:26, ])
 se.r1.sl.sim18 <- t(res.r1.sl18[27:46, ])
 
 #### fully stratified ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.fs.sl18 = foreach(j = 1:m,
@@ -5678,7 +5678,7 @@ se.fs.sl.sim18 <- t(res.fs.sl18[26:44, ])
 #### t-learner ####
 
 #### naive model ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.na.tl18 = foreach(j = 1:m,
@@ -5892,7 +5892,7 @@ res.na.tl.sim18 <- t(res.na.tl18[1:13, ])
 se.na.tl.sim18 <- t(res.na.tl18[14:20, ])
 
 #### random effects model ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.re.tl18 = foreach(j = 1:m,
@@ -6108,7 +6108,7 @@ res.re.tl.sim18 <- t(res.re.tl18[1:25, ])
 se.re.tl.sim18 <- t(res.re.tl18[26:44, ])
 
 #### stratified intercept ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.si.tl18 = foreach(j = 1:m,
@@ -6323,7 +6323,7 @@ res.si.tl.sim18 <- t(res.si.tl18[1:25, ])
 se.si.tl.sim18 <- t(res.si.tl18[26:44, ])
 
 #### rank-1 ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.r1.tl18 = foreach(j = 1:m,
@@ -6573,7 +6573,7 @@ res.r1.tl.sim18 <- t(res.r1.tl18[1:26, ])
 se.r1.tl.sim18 <- t(res.r1.tl18[27:46, ])
 
 #### fully stratified ####
-m <- 100
+m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
 res.fs.tl18 = foreach(j = 1:m,
