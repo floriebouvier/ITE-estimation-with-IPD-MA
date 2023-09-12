@@ -252,7 +252,7 @@ stopCluster(cl)
 res.na.sl.sim4 <- t(res.na.sl4[1:26, ])
 se.na.sl.sim4 <- t(res.na.sl4[27:47, ])
 
-#### random effects model ####
+#### random intercept model ####
 m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
@@ -353,7 +353,7 @@ res.re.sl4 = foreach(j = 1:m,
     test1$treat <- 1
     
     #applying the model to train
-    mod <- glmer(death~(age+factor(sex)+sbp+factor(mi)+factor(stroke)+factor(smoke)+factor(diab)+lvhn1+height)*factor(treat)+(1|trial)+(0+treat|trial),
+    mod <- glmer(death~(age+factor(sex)+sbp+factor(mi)+factor(stroke)+factor(smoke)+factor(diab)+lvhn1+height)*factor(treat)+(1|trial),
                  data = train,family = binomial,
                  control = glmerControl(optimizer = "bobyqa",optCtrl=list(maxfun=100000)))
     coef <- mod@beta
@@ -1358,7 +1358,7 @@ stopCluster(cl)
 res.na.tl.sim4 <- t(res.na.tl4[1:26, ])
 se.na.tl.sim4 <- t(res.na.tl4[27:47, ])
 
-#### random effects model ####
+#### random intercept model ####
 m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
@@ -2530,7 +2530,7 @@ stopCluster(cl)
 res.na.sl.sim5 <- t(res.na.sl5[1:26, ])
 se.na.sl.sim5 <- t(res.na.sl5[27:47, ])
 
-#### random effects model ####
+#### random intercept model ####
 m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
@@ -2631,7 +2631,7 @@ res.re.sl5 = foreach(j = 1:m,
                            test1$treat <- 1
                            
                            #applying the model to train
-                           mod <- glmer(death~(age+factor(sex)+sbp+factor(mi)+factor(stroke)+factor(smoke)+factor(diab)+lvhn1+height)*factor(treat)+(1|trial)+(0+treat|trial),
+                           mod <- glmer(death~(age+factor(sex)+sbp+factor(mi)+factor(stroke)+factor(smoke)+factor(diab)+lvhn1+height)*factor(treat)+(1|trial),
                                         data = train,family = binomial,
                                         control = glmerControl(optimizer = "bobyqa",optCtrl=list(maxfun=100000)))
                            coef <- mod@beta
@@ -3636,7 +3636,7 @@ stopCluster(cl)
 res.na.tl.sim5 <- t(res.na.tl5[1:26, ])
 se.na.tl.sim5 <- t(res.na.tl5[27:47, ])
 
-#### random effects model ####
+#### random intercept model ####
 m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
@@ -4809,7 +4809,7 @@ stopCluster(cl)
 res.na.sl.sim6 <- t(res.na.sl6[1:26, ])
 se.na.sl.sim6 <- t(res.na.sl6[27:47, ])
 
-#### random effects model ####
+#### random intercept model ####
 m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
@@ -4910,7 +4910,7 @@ res.re.sl6 = foreach(j = 1:m,
                            test1$treat <- 1
                            
                            #applying the model to train
-                           mod <- glmer(death~(age+factor(sex)+sbp+factor(mi)+factor(stroke)+factor(smoke)+factor(diab)+lvhn1+height)*factor(treat)+(1|trial)+(0+treat|trial),
+                           mod <- glmer(death~(age+factor(sex)+sbp+factor(mi)+factor(stroke)+factor(smoke)+factor(diab)+lvhn1+height)*factor(treat)+(1|trial),
                                         data = train,family = binomial,
                                         control = glmerControl(optimizer = "bobyqa",optCtrl=list(maxfun=100000)))
                            coef <- mod@beta
@@ -5915,7 +5915,7 @@ stopCluster(cl)
 res.na.tl.sim6 <- t(res.na.tl6[1:26, ])
 se.na.tl.sim6 <- t(res.na.tl6[27:47, ])
 
-#### random effects model ####
+#### random intercept model ####
 m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
