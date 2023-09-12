@@ -222,7 +222,7 @@ stopCluster(cl)
 res.na.sl.sim19 <- t(res.na.sl19[1:13, ])
 se.na.sl.sim19 <- t(res.na.sl19[14:20, ])
 
-#### random effects model ####
+#### random intercept model ####
 m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
@@ -309,7 +309,7 @@ res.re.sl19 = foreach(j = 1:m,
                             test1$treat <- 1
                             
                             #applying the model to train
-                            mod <- coxme(Surv(time,status)~(age+factor(sex)+sbp)*factor(treat)+(1+treat|trial),
+                            mod <- coxme(Surv(time,status)~(age+factor(sex)+sbp)*factor(treat)+(1|trial),
                                          data = train)
                             coef <- mod$coefficients
                             coef_mat[,i] <- coef
@@ -1074,7 +1074,7 @@ stopCluster(cl)
 res.na.tl.sim19 <- t(res.na.tl19[1:13, ])
 se.na.tl.sim19 <- t(res.na.tl19[14:20, ])
 
-#### random effects model ####
+#### random intercept model ####
 m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
@@ -1995,7 +1995,7 @@ stopCluster(cl)
 res.na.sl.sim20 <- t(res.na.sl20[1:13, ])
 se.na.sl.sim20 <- t(res.na.sl20[14:20, ])
 
-#### random effects model ####
+#### random intercept model ####
 m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
@@ -2082,7 +2082,7 @@ res.re.sl20 = foreach(j = 1:m,
                             test1$treat <- 1
                             
                             #applying the model to train
-                            mod <- coxme(Surv(time,status)~(age+factor(sex)+sbp)*factor(treat)+(1+treat|trial),
+                            mod <- coxme(Surv(time,status)~(age+factor(sex)+sbp)*factor(treat)+(1|trial),
                                          data = train)
                             coef <- mod$coefficients
                             coef_mat[,i] <- coef
@@ -2847,7 +2847,7 @@ stopCluster(cl)
 res.na.tl.sim20 <- t(res.na.tl20[1:13, ])
 se.na.tl.sim20 <- t(res.na.tl20[14:20, ])
 
-#### random effects model ####
+#### random intercept model ####
 m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
@@ -3769,7 +3769,7 @@ stopCluster(cl)
 res.na.sl.sim21 <- t(res.na.sl21[1:13, ])
 se.na.sl.sim21 <- t(res.na.sl21[14:20, ])
 
-#### random effects model ####
+#### random intercept model ####
 m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
@@ -3856,7 +3856,7 @@ res.re.sl21 = foreach(j = 1:m,
                             test1$treat <- 1
                             
                             #applying the model to train
-                            mod <- coxme(Surv(time,status)~(age+factor(sex)+sbp)*factor(treat)+(1+treat|trial),
+                            mod <- coxme(Surv(time,status)~(age+factor(sex)+sbp)*factor(treat)+(1|trial),
                                          data = train)
                             coef <- mod$coefficients
                             coef_mat[,i] <- coef
@@ -4621,7 +4621,7 @@ stopCluster(cl)
 res.na.tl.sim21 <- t(res.na.tl21[1:13, ])
 se.na.tl.sim21 <- t(res.na.tl21[14:20, ])
 
-#### random effects model ####
+#### random intercept model ####
 m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
