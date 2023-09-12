@@ -191,7 +191,7 @@ se.na.sl.sim1 <- t(res.na.sl1[15:22, ])
 colnames(res.na.sl.sim1) <- c("C-statistic for benefit","C-statistic for benefit SE","Intercept","Slope","MSE","Prop in int","b0","b1","b2","b3","b4","b5","b6","b7")
 colnames(se.na.sl.sim1) <- c("b0","b1","b2","b3","b4","b5","b6","b7")
 
-#### random effects model ####
+#### random intercept model ####
 m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
@@ -253,7 +253,7 @@ res.re.sl1 = foreach(j = 1:m, .combine = "cbind", .packages = c("tidyverse","Hmi
     train <- df[df$trial!=i,]
     
     #applying the model to train
-    mod <- glmer(death~(age+factor(sex)+sbp)*factor(treat)+(1|trial)+(0+treat|trial),
+    mod <- glmer(death~(age+factor(sex)+sbp)*factor(treat)+(1|trial),
                  data = train, family = binomial,
                  control = glmerControl(optimizer = "bobyqa",optCtrl=list(maxfun=100000)))
     coef <- mod@beta
@@ -926,7 +926,7 @@ colnames(res.na.tl.sim1) <- c("C-statistic for benefit","C-statistic for benefit
 colnames(se.na.tl.sim1) <- c("b0","b1","b2","b3","b4","b5","b6","b7")
 
 
-#### random effects model ####
+#### random intercept model ####
 m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
@@ -1753,7 +1753,7 @@ se.na.sl.sim2 <- t(res.na.sl2[15:22, ])
 colnames(res.na.sl.sim2) <- c("C-statistic for benefit","C-statistic for benefit SE","Intercept","Slope","MSE","Prop in int","b0","b1","b2","b3","b4","b5","b6","b7")
 colnames(se.na.sl.sim2) <- c("b0","b1","b2","b3","b4","b5","b6","b7")
 
-#### random effects model ####
+#### random intercept model ####
 m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
@@ -1815,7 +1815,7 @@ res.re.sl2 = foreach(j = 1:m, .combine = "cbind", .packages = c("tidyverse","Hmi
     train <- df[df$trial!=i,]
     
     #applying the model to train
-    mod <- glmer(death~(age+factor(sex)+sbp)*factor(treat)+(1|trial)+(0+treat|trial),
+    mod <- glmer(death~(age+factor(sex)+sbp)*factor(treat)+(1|trial),
                  data = train, family = binomial,
                  control = glmerControl(optimizer = "bobyqa",optCtrl=list(maxfun=100000)))
     coef <- mod@beta
@@ -2488,7 +2488,7 @@ colnames(res.na.tl.sim2) <- c("C-statistic for benefit","C-statistic for benefit
 colnames(se.na.tl.sim2) <- c("b0","b1","b2","b3","b4","b5","b6","b7")
 
 
-#### random effects model ####
+#### random intercept model ####
 m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
@@ -3316,7 +3316,7 @@ se.na.sl.sim3 <- t(res.na.sl3[15:22, ])
 colnames(res.na.sl.sim3) <- c("C-statistic for benefit","C-statistic for benefit SE","Intercept","Slope","MSE","Prop in int","b0","b1","b2","b3","b4","b5","b6","b7")
 colnames(se.na.sl.sim3) <- c("b0","b1","b2","b3","b4","b5","b6","b7")
 
-#### random effects model ####
+#### random intercept model ####
 m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
@@ -3378,7 +3378,7 @@ res.re.sl3 = foreach(j = 1:m, .combine = "cbind", .packages = c("tidyverse","Hmi
     train <- df[df$trial!=i,]
     
     #applying the model to train
-    mod <- glmer(death~(age+factor(sex)+sbp)*factor(treat)+(1|trial)+(0+treat|trial),
+    mod <- glmer(death~(age+factor(sex)+sbp)*factor(treat)+(1|trial),
                  data = train, family = binomial,
                  control = glmerControl(optimizer = "bobyqa",optCtrl=list(maxfun=100000)))
     coef <- mod@beta
@@ -4060,7 +4060,7 @@ colnames(res.na.tl.sim3) <- c("C-statistic for benefit","C-statistic for benefit
 colnames(se.na.tl.sim3) <- c("b0","b1","b2","b3","b4","b5","b6","b7")
 
 
-#### random effects model ####
+#### random intercept model ####
 m <- 1000
 cl = makeCluster(detectCores())
 registerDoParallel(cl)
